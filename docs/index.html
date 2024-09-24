@@ -146,23 +146,27 @@
             border-top: 2px solid var(--border-color);
             padding-top: 20px;
         }
+
+        /* Enhanced icon button styles */
         .toggle-button {
             cursor: pointer;
-            background-color: var(--primary-color);
+            background: linear-gradient(145deg, #ff6ec4, #7873f5); /* Gradient background */
             color: white;
             border: none;
             padding: 15px;
             border-radius: 50%;
             font-size: 28px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
         }
         .toggle-button:hover {
-            background-color: var(--link-hover-color);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), inset 0 0 12px rgba(255, 255, 255, 0.2);
             transform: scale(1.1);
         }
         .toggle-button i {
             color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
