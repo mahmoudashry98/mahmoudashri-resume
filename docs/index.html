@@ -35,24 +35,19 @@
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-
-        /* New container style */
         .container {
             max-width: 850px;
             margin: 60px auto;
-            background: linear-gradient(145deg, #e0eaff, #f9fafc); /* Light gradient background */
-            border-radius: 16px;
+            background-color: var(--card-bg-color);
             padding: 40px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12), inset 0 0 15px rgba(255, 255, 255, 0.1); /* Elevated shadow */
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
             border: 1px solid var(--border-color);
-            transition: all 0.4s ease;
         }
-
         .container:hover {
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2), inset 0 0 18px rgba(255, 255, 255, 0.2); /* Deeper shadow on hover */
-            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
-
         .header {
             display: flex;
             justify-content: space-between;
@@ -151,27 +146,23 @@
             border-top: 2px solid var(--border-color);
             padding-top: 20px;
         }
-
-        /* Enhanced icon button styles */
         .toggle-button {
             cursor: pointer;
-            background: linear-gradient(145deg, #ff6ec4, #7873f5); /* Gradient background */
+            background-color: var(--primary-color);
             color: white;
             border: none;
             padding: 15px;
             border-radius: 50%;
             font-size: 28px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .toggle-button:hover {
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), inset 0 0 12px rgba(255, 255, 255, 0.2);
+            background-color: var(--link-hover-color);
             transform: scale(1.1);
         }
         .toggle-button i {
             color: white;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
