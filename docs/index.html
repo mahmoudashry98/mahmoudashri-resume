@@ -151,13 +151,18 @@
             background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 15px;
             border-radius: 50%;
-            font-size: 24px;
-            transition: background-color 0.3s ease;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .toggle-button:hover {
             background-color: var(--link-hover-color);
+            transform: scale(1.1);
+        }
+        .toggle-button i {
+            color: white;
         }
     </style>
 </head>
