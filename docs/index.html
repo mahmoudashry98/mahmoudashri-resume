@@ -1,43 +1,226 @@
-        <h3>Doctor App</h3>
-        <p>Developed a doctor app for appointment scheduling and consultations with features like authentication, clean architecture, error handling, and shared preferences.</p>
-
-        <h3>ToDo App</h3>
-        <p>Created a ToDo app with Sqflite for NoSQL storage, Bloc for state management, and local push notifications for reminders.</p>
-    </div>
-
-    <div class="button-container">
-        <a href="mailto:m.ashri.dev@gmail.com">Contact Me</a>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2024 Mahmoud Ashri | All rights reserved</p>
-    </div>
-</div>
-
-<script>
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-
-    // Apply saved theme
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeIcon.classList.remove('fa-ghost');
-        themeIcon.classList.add('fa-sun');
-    }
-
-    themeToggle.addEventListener('click', () => {
-        const theme = document.documentElement.getAttribute('data-theme');
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-ghost');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            themeIcon.classList.remove('fa-ghost');
-            themeIcon.classList.add('fa-sun');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Ashri - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f9fafc;
+            --card-bg-color: #ffffff;
+            --border-color: #e0e0e0;
+            --link-hover-color: #1f6f93;
         }
-    });
-</script>
+
+        [data-theme="dark"] {
+            --primary-color: #00ffcc; /* Neon color for primary elements */
+            --text-color: #ffffff; /* White text for contrast */
+            --bg-color: #1a1a1a; /* Darker background */
+            --card-bg-color: #333333; /* Dark gray for cards */
+            --border-color: #444444;
+            --link-hover-color: #ff66b2; /* Neon pink hover color */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .container {
+            max-width: 850px;
+            margin: 60px auto;
+            background-color: var(--card-bg-color);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .container:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .header-left h1 {
+            margin: 0;
+            font-size: 34px;
+            color: var(--primary-color);
+        }
+        .header-left p {
+            margin-top: 10px;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+        .contact-info {
+            margin-top: 10px;
+            font-size: 16px;
+            color: var(--text-color);
+        }
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-right: 12px;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: var(--link-hover-color);
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: var(--link-hover-color);
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 26px;
+            margin-top: 40px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+        h3 {
+            margin-top: 20px;
+            font-size: 20px;
+            color: var(--text-color);
+        }
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            color: var(--text-color);
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        p {
+            color: var(--text-color);
+        }
+        .skills, .education, .projects {
+            margin-top: 40px;
+        }
+        .skills ul, .projects ul {
+            columns: 2;
+            column-gap: 40px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .button-container a {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .button-container a:hover {
+            background-color: var(--link-hover-color);
+            transform: translateY(-3px);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: var(--text-color);
+            border-top: 2px solid var(--border-color);
+            padding-top: 20px;
+        }
+        .toggle-button {
+            cursor: pointer;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50%;
+            font-size: 24px;
+            transition: background-color 0.3s ease;
+        }
+        .toggle-button:hover {
+            background-color: var(--link-hover-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <h1>Mahmoud Ashri</h1>
+                <p>Mobile Developer</p>
+                <div class="contact-info">
+                    Dubai, UAE | <a href="mailto:m.ashri.dev@gmail.com">m.ashri.dev@gmail.com</a> | +971585673344
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/mahmoud-ashri-a6b882198/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/mahmoudashry98" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <button class="toggle-button" id="themeToggle"><i class="fas fa-ghost" id="themeIcon"></i></button>
+        </div>
+
+        <h2>Work Experience</h2>
+
+        <h3>Mobile Developer (Flutter) - Jadwelny Portal</h3>
+        <ul>
+            <li>Built UI components using Flutter/Dart.</li>
+            <li>Improved load times and user engagement.</li>
+            <li>Wrote clean, maintainable, and testable code.</li>
+            <li>Available on Google Play, Apple App Store, and Huawei Gallery.</li>
+        </ul>
+
+        <h3>Mobile Developer (Flutter) - Algoriza</h3>
+        <ul>
+            <li>Developed a ToDo app and a weather app with efficient state management and user-centric features.</li>
+            <li>Collaborated with backend teams for seamless data integration and real-time updates.</li>
+        </ul>
+
+        <h3>Mobile Developer (Flutter) - Appgain.io</h3>
+        <ul>
+            <li>Enhanced a customer engagement platform with Flutter, improving brand reach and user interactions.</li>
+            <li>Used Agile methodologies for timely feature and update delivery.</li>
+        </ul>
+
+        <div class="skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Programming languages: Dart, Java, Kotlin</li>
+                <li>Payment Gateways: Stripe, Ziina, Paymob, PayPal</li>
+                <li>RESTful APIs, GraphQL, third-party integrations</li>
+                <li>CI/CD with GitHub Actions, GitLab CI</li>
+                <li>Version control: GitHub, GitLab</li>
+                <li>State management: Bloc, Provider, GetX, Riverpod</li>
+                <li>Firebase Auth, Cloud Messaging, Firestore</li>
+                <li>GoogleMap (Live Tracking, Access Zones, Fastest Route Calculation)</li>
+            </ul>
+        </div>
+
+        <div class="education">
+            <h2>Education</h2>
+            <p><strong>Bachelor of Computer Science</strong> - O6U University</p>
+            <p>Graduation Project: Developed a Flutter-based mobile application for COVID-19 tracking, achieving an A grade for innovative use of technology in public health.</p>
+        </div>
+
+        <div class="projects">
+            <h2>Projects</h2>
+
+            <h3>E-commerce App</h3>
+            <p>Built a shop app with Flutter and Bloc, featuring product purchasing, location detection, secure payment processing, wishlist,
