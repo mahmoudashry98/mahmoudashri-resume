@@ -35,19 +35,24 @@
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+        /* New container style */
         .container {
             max-width: 850px;
             margin: 60px auto;
-            background-color: var(--card-bg-color);
+            background: linear-gradient(145deg, #e0eaff, #f9fafc); /* Light gradient background */
+            border-radius: 16px;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12), inset 0 0 15px rgba(255, 255, 255, 0.1); /* Elevated shadow */
             border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
         }
+
         .container:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2), inset 0 0 18px rgba(255, 255, 255, 0.2); /* Deeper shadow on hover */
+            transform: scale(1.02);
         }
+
         .header {
             display: flex;
             justify-content: space-between;
