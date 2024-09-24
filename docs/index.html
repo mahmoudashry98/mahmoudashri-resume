@@ -47,16 +47,18 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         .header {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding-bottom: 25px;
             border-bottom: 2px solid var(--border-color);
         }
-        .header h1 {
+        .header-left h1 {
             margin: 0;
             font-size: 34px;
             color: var(--primary-color);
         }
-        .header p {
+        .header-left p {
             margin-top: 10px;
             font-size: 18px;
             color: var(--text-color);
@@ -130,10 +132,6 @@
             border-top: 2px solid var(--border-color);
             padding-top: 20px;
         }
-        .toggle-container {
-            text-align: right;
-            margin-bottom: 20px;
-        }
         .toggle-button {
             cursor: pointer;
             background-color: var(--primary-color);
@@ -150,18 +148,18 @@
     </style>
 </head>
 <body>
-    <div class="toggle-container">
-        <button class="toggle-button" id="themeToggle">Toggle Dark/Light Mode</button>
-    </div>
     <div class="container">
         <div class="header">
-            <h1>Mahmoud Ashri</h1>
-            <p>Mobile Developer</p>
-            <div class="contact-info">
-                Dubai, UAE | <a href="mailto:m.ashri.dev@gmail.com">m.ashri.dev@gmail.com</a> | +971585673344 <br>
-                <a href="https://github.com/mahmoudashry98">GitHub</a> | 
-                <a href="https://www.linkedin.com/in/mahmoud-ashri-a6b882198/">LinkedIn</a>
+            <div class="header-left">
+                <h1>Mahmoud Ashri</h1>
+                <p>Mobile Developer</p>
+                <div class="contact-info">
+                    Dubai, UAE | <a href="mailto:m.ashri.dev@gmail.com">m.ashri.dev@gmail.com</a> | +971585673344 <br>
+                    <a href="https://github.com/mahmoudashry98">GitHub</a> | 
+                    <a href="https://www.linkedin.com/in/mahmoud-ashri-a6b882198/">LinkedIn</a>
+                </div>
             </div>
+            <button class="toggle-button" id="themeToggle">Toggle Dark/Light Mode</button>
         </div>
 
         <h2>Work Experience</h2>
@@ -230,23 +228,4 @@
 
     <script>
         const themeToggle = document.getElementById('themeToggle');
-        const currentTheme = localStorage.getItem('theme') || 'light';
-
-        // Apply saved theme
-        if (currentTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-    </script>
-</body>
-</html>
+        const current
