@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #e3f2fd, #f4f4f4);
             margin: 0;
             padding: 0;
             color: #333;
@@ -18,8 +18,12 @@
             margin: 50px auto;
             background: white;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .container:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         .header {
             text-align: center;
@@ -44,16 +48,32 @@
             color: #007BFF;
             text-decoration: none;
             margin-right: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+        .contact-info a:hover {
+            color: #0056b3;
         }
         h2 {
             color: #007BFF;
             margin-top: 40px;
-            font-size: 24px;
+            font-size: 26px;
+            border-left: 4px solid #007BFF;
+            padding-left: 10px;
         }
         h3 {
             margin-top: 30px;
-            font-size: 20px;
+            font-size: 22px;
             color: #333;
+            position: relative;
+        }
+        h3::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: #007BFF;
+            bottom: -5px;
+            left: 0;
         }
         ul {
             padding-left: 20px;
@@ -76,6 +96,25 @@
             margin-top: 50px;
             font-size: 14px;
             color: #777;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button-container a {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .button-container a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -144,6 +183,10 @@
 
             <h3>ToDo App</h3>
             <p>Created a ToDo app with Sqflite for NoSQL storage, Bloc for state management, and local push notifications for reminders.</p>
+        </div>
+
+        <div class="button-container">
+            <a href="mailto:m.ashri.dev@gmail.com">Contact Me</a>
         </div>
 
         <div class="footer">
