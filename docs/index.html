@@ -16,14 +16,13 @@
             --link-hover-color: #1f6f93;
         }
 
-        /* Softer, neutral dark mode */
         [data-theme="dark"] {
-            --primary-color: #8ab4f8; /* Soft light blue */
-            --text-color: #d1d5db;   /* Light gray for text */
-            --bg-color: #1e1e1e;     /* Dark, near-black background */
-            --card-bg-color: #2b2b2b; /* Dark gray for card background */
-            --border-color: #444;     /* Muted gray border */
-            --link-hover-color: #6bb3ff; /* Lighter blue for hover effects */
+            --primary-color: #8ab4f8;
+            --text-color: #d1d5db;
+            --bg-color: #1e1e1e;
+            --card-bg-color: #2b2b2b;
+            --border-color: #444;
+            --link-hover-color: #6bb3ff;
         }
 
         body {
@@ -180,30 +179,28 @@
                     <a href="https://github.com/mahmoudashry98" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-            <!-- Fun icons for dark mode toggle -->
             <button class="toggle-button" id="themeToggle"><i class="fas fa-ghost" id="themeIcon"></i></button>
         </div>
 
         <h2>Work Experience</h2>
-
         <h3>Mobile Developer (Flutter) - Jadwelny Portal</h3>
         <ul>
-            <li>Built UI components using Flutter/Dart.</li>
-            <li>Improved load times and user engagement.</li>
-            <li>Wrote clean, maintainable, and testable code.</li>
-            <li>Available on Google Play, Apple App Store, and Huawei Gallery.</li>
-        </ul>
-
-        <h3>Mobile Developer (Flutter) - Algoriza</h3>
-        <ul>
-            <li>Developed a ToDo app and a weather app with efficient state management and user-centric features.</li>
-            <li>Collaborated with backend teams for seamless data integration and real-time updates.</li>
+            <li>Implemented a wallet system with top-up functionality for seamless hotel bookings.</li>
+            <li>Designed a tiered points system (Bronze, Silver, Gold) for user rewards and real-time updates.</li>
+            <li>Improved user engagement with seamless payment and efficient data handling.</li>
+            <li>Applications available on Google Play, Apple App Store, and Huawei Gallery.</li>
         </ul>
 
         <h3>Mobile Developer (Flutter) - Appgain.io</h3>
         <ul>
-            <li>Enhanced a customer engagement platform with Flutter, improving brand reach and user interactions.</li>
-            <li>Used Agile methodologies for timely feature and update delivery.</li>
+            <li>Enhanced Ikhair.net, a platform connecting donors with humanitarian cases.</li>
+            <li>Developed user-friendly features for seamless donations and real-time updates.</li>
+        </ul>
+
+        <h3>Mobile Developer Intern (Flutter) - Algoriza</h3>
+        <ul>
+            <li>Developed ToDo and weather apps using Provider and Riverpod for efficient state management.</li>
+            <li>Collaborated on backend integration for real-time updates.</li>
         </ul>
 
         <div class="skills">
@@ -211,32 +208,31 @@
             <ul>
                 <li>Programming languages: Dart, Java, Kotlin</li>
                 <li>Payment Gateways: Stripe, Ziina, Paymob, PayPal</li>
-                <li>RESTful APIs, GraphQL, third-party integrations</li>
-                <li>CI/CD with GitHub Actions, GitLab CI</li>
-                <li>Version control: GitHub, GitLab</li>
-                <li>State management: Bloc, Provider, GetX, Riverpod</li>
-                <li>Firebase Auth, Cloud Messaging, Firestore</li>
-                <li>GoogleMap (Live Tracking, Access Zones, Fastest Route Calculation)</li>
+                <li>RESTful APIs, GraphQL, and third-party integrations</li>
+                <li>Local Database: Sqflite, Hive, Shared Preferences</li>
+                <li>State Management: Bloc, Provider, GetX, Riverpod</li>
+                <li>Firebase: Auth, Cloud Messaging, Firestore</li>
+                <li>Google Map: Live Tracking, Access Zones, Fastest Route Calculation</li>
             </ul>
         </div>
 
         <div class="education">
             <h2>Education</h2>
             <p><strong>Bachelor of Computer Science</strong> - O6U University</p>
-            <p>Graduation Project: Developed a Flutter-based mobile application for COVID-19 tracking, achieving an A grade for innovative use of technology in public health.</p>
+            <p>Graduation Project: Flutter-based COVID-19 tracking app (A grade).</p>
         </div>
 
         <div class="projects">
             <h2>Projects</h2>
 
             <h3>E-commerce App</h3>
-            <p>Built a shop app with Flutter and Bloc, featuring product purchasing, location detection, secure payment processing, wishlist, and personalized product recommendations.</p>
+            <p>Developed a shopping app with Flutter, featuring secure payment, wishlist, and order tracking.</p>
 
             <h3>Doctor App</h3>
-            <p>Developed a doctor app for appointment scheduling and consultations with features like authentication, clean architecture, error handling, and shared preferences.</p>
+            <p>Created a doctor app for appointment scheduling, with features like authentication, clean architecture, and error handling.</p>
 
             <h3>ToDo App</h3>
-            <p>Created a ToDo app with Sqflite for NoSQL storage, Bloc for state management, and local push notifications for reminders.</p>
+            <p>Built a ToDo app with local storage (Sqflite), state management (Bloc), and notifications.</p>
         </div>
 
         <div class="button-container">
@@ -244,7 +240,7 @@
         </div>
 
         <div class="footer">
-            <p>&copy; 2024 Mahmoud Ashri | All rights reserved</p>
+            <p>&copy; 2025 Mahmoud Ashri | All rights reserved</p>
         </div>
     </div>
 
@@ -253,7 +249,6 @@
         const themeIcon = document.getElementById('themeIcon');
         const currentTheme = localStorage.getItem('theme') || 'light';
 
-        // Apply saved theme
         if (currentTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             themeIcon.classList.remove('fa-ghost');
